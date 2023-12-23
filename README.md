@@ -6,18 +6,21 @@ Fully functional, SwiftUI-ready WebView for iOS 13+ and MacOS 10.15+. Actions an
 
 ![Preview macOS](https://github.com/globulus/swiftui-webview/blob/main/Images/preview_macos.gif?raw=true)
 
+This is a branch from https://github.com/globulus/swiftui-webview to add support for preferredContentMode.
+
+
 ## Installation
 
 This component is distributed as a **Swift package**. Just add this URL to your package list:
 
 ```text
-https://github.com/globulus/swiftui-webview
+https://github.com/sethgecko13/swiftui-webview
 ```
 
 You can also use **CocoaPods**:
 
 ```ruby
-pod 'SwiftUIWebView', '~> 1.0.8'
+pod 'SwiftUIWebView', '~> 1.0.9'
 ```
 
 ## Sample usage
