@@ -205,7 +205,10 @@ public struct WebViewConfig {
                 mediaTypesRequiringUserActionForPlayback: WKAudiovisualMediaTypes = [],
                 isScrollEnabled: Bool = true,
                 isOpaque: Bool = true,
-                backgroundColor: Color = .clear) {
+                backgroundColor: Color = .clear,
+                preferredContentMode: WKWebpagePreferences.ContentMode = .recommended
+
+    ) {
         self.javaScriptEnabled = javaScriptEnabled
         self.allowsBackForwardNavigationGestures = allowsBackForwardNavigationGestures
         self.allowsInlineMediaPlayback = allowsInlineMediaPlayback
@@ -213,7 +216,7 @@ public struct WebViewConfig {
         self.isScrollEnabled = isScrollEnabled
         self.isOpaque = isOpaque
         self.backgroundColor = backgroundColor
-        self.preferredContentMode = .recommended
+        self.preferredContentMode = preferredContentMode
     }
 }
 
