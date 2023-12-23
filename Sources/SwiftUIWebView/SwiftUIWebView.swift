@@ -196,6 +196,8 @@ public struct WebViewConfig {
     public let isScrollEnabled: Bool
     public let isOpaque: Bool
     public let backgroundColor: Color
+    public let preferredContentMode: WKWebpagePreferences.ContentMode
+    
     
     public init(javaScriptEnabled: Bool = true,
                 allowsBackForwardNavigationGestures: Bool = true,
@@ -211,6 +213,7 @@ public struct WebViewConfig {
         self.isScrollEnabled = isScrollEnabled
         self.isOpaque = isOpaque
         self.backgroundColor = backgroundColor
+        self.preferredContentMode = .recommended
     }
 }
 
@@ -248,6 +251,7 @@ public struct WebView: UIViewRepresentable {
         let configuration = WKWebViewConfiguration()
         configuration.allowsInlineMediaPlayback = config.allowsInlineMediaPlayback
         configuration.mediaTypesRequiringUserActionForPlayback = config.mediaTypesRequiringUserActionForPlayback
+        configuration.defaultWebpagePreferences.preferredContentMode = config.preferredContentMode
         configuration.preferences = preferences
         
         let webView = WKWebView(frame: CGRect.zero, configuration: configuration)
@@ -255,6 +259,7 @@ public struct WebView: UIViewRepresentable {
         webView.uiDelegate = context.coordinator
         webView.allowsBackForwardNavigationGestures = config.allowsBackForwardNavigationGestures
         webView.scrollView.isScrollEnabled = config.isScrollEnabled
+        
         webView.isOpaque = config.isOpaque
         if #available(iOS 14.0, *) {
             webView.backgroundColor = UIColor(config.backgroundColor)

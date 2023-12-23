@@ -30,6 +30,8 @@ pod 'SwiftUIWebView', '~> 1.0.8'
   + `isScrollEnabled`
   + `isOpaque`
   + `backgroundColor`
+  + `configuration.defaultWebpagePreferences.preferredContentMode`
+
  * The **action** binding is used to control the WebView - whichever action you want it to perform, just set the variable's value to it. Available actions:
    + `idle` - does nothing and can be used as the default value.
    + `load(URLRequest)` - loads the given request.
